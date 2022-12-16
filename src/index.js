@@ -1,24 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
 
 class Square extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: null,
+    }
+  }
+
   render() {
     return (
-      <button className="square">
-        {this.props.value}
+      <button className="square" onClick={() => this.setState({ value: 'X' })}>
+        {this.state.value}
       </button>
-    );
+    )
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square value={i} />;
+    return <Square value={i} />
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = 'Next player: X'
 
     return (
       <div>
@@ -39,7 +46,7 @@ class Board extends React.Component {
           {this.renderSquare(8)}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -55,11 +62,11 @@ class Game extends React.Component {
           <ol>{/* TODO */}</ol>
         </div>
       </div>
-    );
+    )
   }
 }
 
 // ========================================
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Game />);
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Game />)
