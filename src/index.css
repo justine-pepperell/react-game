@@ -24,10 +24,10 @@ ol, ul {
 }
 
 .square {
-  border: 2px solid black;
+  border: 1px solid black;
+  border-radius: 4px;
   float: left;
   font-size: 48px;
-  font-weight: bold;
   line-height: 34px;
   height: 68px;
   margin-right: 3px;
